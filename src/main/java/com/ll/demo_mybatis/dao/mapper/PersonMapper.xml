@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!-- namespace必须指向Dao接口 -->  
+<mapper namespace="com.ll.demo_mybatis.dao.PersonMapper">
+
+    <resultMap id="PersonDTO" type="com.ll.demo_mybatis.module.Person" >  
+        <result column="id" property="id" />  
+        <result column="name" property="name" />  
+        <result column="age" property="age" />  
+    </resultMap>  
+  
+    <!-- 根据ID查询数据 -->  
+    <select id="findAll" resultMap="PersonDTO">  
+        select   
+            id,  
+            name,  
+            age   
+        from person 
+    </select>  
+</mapper>
